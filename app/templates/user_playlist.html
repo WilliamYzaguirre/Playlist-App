@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+
+<form action="/submit">
+
+<h1>{{current_user}}'s playlist:</h1>
+
+<table style="width:100%">
+<th>Track Number</th>
+<th>Title</th>
+<th>Artist</th>
+<th>Year</th>
+<th>Album</th>
+<th>Action</th>
+
+{% for i in range(playlist_length) %}
+<tr>
+	<td>
+    	<select name=move method="GET" action="/">
+    		<option value="">{{i + 1}}</option>
+    		{% for value in order %}
+    			{% if value != i + 1 %}
+    				<option value="move_{{i + 1}}_{{value}}">Move to {{value}}</option>
+    			{%endif%}
+    		{%endfor%}
+    	</select>
+    </td>
+    <td>{{playlist[i][0]}}</td>
+    <td>{{playlist[i][1]}}</td>
+    <td>{{playlist[i][2]}}</td>
+    <td><img src="/static/{{playlist[i][3]}}", width=75, height=75></td>
+    <td>
+    	<select name={{playlist[i][0]}} method="GET" action="/">
+    		<option value="nothing"></option>
+    		<option value="remove">Remove</option>
+    	</select>
+    </td>
+    
+</tr>
+{% endfor %}
+ 
+</table>
+
+<h2> Available songs: </h2>
+<table style="width:100%">
+<th>Title</th>
+<th>Artist</th>
+<th>Year</th>
+<th>Album</th>
+<th>Action</th>
+
+{% for song in all_songs %}
+	{% if song not in playlist %}
+		<tr>
+    		<td>{{song[0]}}</td>
+    		<td>{{song[1]}}</td> 
+    		<td>{{song[2]}}</td>
+    		<td><img src="/static/{{song[3]}}", width=75, height=75></td>
+    		<td>
+    		<select name={{song[0]}} method="GET" action="/">
+    			<option value="nothing"></option>
+    			<option value="add">Add</option>
+    		</select>
+    		</td>
+		</tr>
+	{% endif %}
+{% endfor %}
+</table>
+<input type="submit" method="get" value="Submit changes"><br/><br/>
+<input type="hidden" name="user_info" value="{{current_user}}">
+</form>
+<form action="/logout">
+<input type="submit" method="get" value="Logout"><br/><br/>
+</form>
+</body>
+</html>

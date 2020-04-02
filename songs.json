@@ -1,0 +1,32 @@
+[
+  {
+    "songname": "Liquid Swords",
+    "artist": "GZA",
+    "year": "1995",
+    "album_cover": "GZALiquidSwords_cover.jpg"
+  },
+  {
+    "songname": "Accordian",
+    "artist": "Madvillain",
+    "year": "2001",
+    "album_cover": "Madvillainy_cover.png"
+  },
+  {
+    "songname": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "year": "1975",
+    "album_cover": "Queen_A_Night_At_The_Opera-cover.png"
+  },
+{
+    "songname": "Doomsday",
+    "artist": "MF Doom",
+    "year": "2001",
+    "album_cover": "Operation_doomsday_cover.jpeg"
+  },
+  {
+    "songname": "Anti-Matter",
+    "artist": "King Geedorah",
+    "year": "2005",
+    "album_cover": "Take_Me_to_Your_Leader_album_cover.jpg"
+  }
+]

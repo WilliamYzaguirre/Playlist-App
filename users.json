@@ -1,0 +1,19 @@
+[
+    {
+        "username": "will",
+        "password": "p1",
+        "playlist": [
+            "Liquid Swords",
+            "Doomsday",
+            "Accordian"
+        ]
+    },
+    {
+        "username": "phil",
+        "password": "p2",
+        "playlist": [
+            "Accordian",
+            "Liquid Swords"
+        ]
+    }
+]
